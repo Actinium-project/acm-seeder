@@ -46,7 +46,7 @@ e-mail address (with the @ part replaced by .) using -m.
 Compiling will require boost and ssl.  On debian systems, these are provided
 by `libboost-dev` and `libssl-dev` respectively.
 
-`$ make`
+`make`
 
 This will produce the `dnsseed` binary.
 
@@ -58,7 +58,7 @@ Typically, you'll need root privileges to listen to port 53 (name service).
 One solution is using an iptables rule (Linux only) to redirect it to
 a non-privileged port:
 
-$ iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-port 5353
+`iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-port 5353`
 
 If properly configured, this will allow you to run dnsseed in userspace, using
 the -p 5353 option.
