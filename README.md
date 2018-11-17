@@ -23,9 +23,9 @@ of reliable nodes via a built-in DNS server.
 ## Usage
 
 
-Assuming you want to run a dns seed on dnsseed.example.com, you will
-need an authorative NS record in example.com's domain record, pointing
-to for example ns.actinium.org:
+Assuming you want to run a dns seed on `dnsseed.actinium.org`, you will
+need an authorative **NS record** in the domain record of `actinium.org`, pointing
+to for example `ns.actinium.org`:
 
 `dig -t NS dnsseed.actinium.org`
 
@@ -34,7 +34,7 @@ to for example ns.actinium.org:
 dnsseed.actinium.org.   86400    IN      NS     ns.actinium.org.
 ```
 
-On the system ns.actinium.org, you can now run dnsseed:
+On the system `ns.actinium.org`, you can now run **dnsseed**:
 
 `./dnsseed -h dnsseed.actinum.org -n ns.actinium.org`
 
@@ -46,7 +46,7 @@ e-mail address (with the @ part replaced by .) using -m.
 Compiling will require boost and ssl.  On debian systems, these are provided
 by `libboost-dev` and `libssl-dev` respectively.
 
-$ make
+`$ make`
 
 This will produce the `dnsseed` binary.
 
