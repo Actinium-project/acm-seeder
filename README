@@ -1,5 +1,5 @@
-litecoin-seeder
-===============
+Actinium-seeder
+---------------
 
 Actinium-seeder is a crawler for the Actinium network, which exposes a list
 of reliable nodes via a built-in DNS server.
