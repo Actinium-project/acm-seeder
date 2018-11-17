@@ -29,7 +29,7 @@ to for example `ns.actinium.org`:
 
 `dig -t NS dnsseed.actinium.org`
 
-````shell
+```shell
 ;; ANSWER SECTION
 dnsseed.actinium.org.   86400    IN      NS     ns.actinium.org.
 ```
