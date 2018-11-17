@@ -1,10 +1,11 @@
-Actinium-seeder
----------------
+## Actinium-seeder
+
 
 Actinium-seeder is a crawler for the Actinium network, which exposes a list
 of reliable nodes via a built-in DNS server.
 
-Features:
+### Features
+
 * regularly revisits known nodes to check their availability
 * bans nodes after enough failures, or bad behaviour
 * accepts nodes down to v0.5.0 to request new IP addresses from,
@@ -14,32 +15,34 @@ Features:
 * very low memory (a few tens of megabytes) and cpu requirements.
 * crawlers run in parallel (by default 96 threads simultaneously).
 
-REQUIREMENTS
-------------
+## Requirements
 
-$ sudo apt-get install build-essential libboost-all-dev libssl-dev
 
-USAGE
------
+`sudo apt-get install build-essential libboost-all-dev libssl-dev`
+
+## Usage
+
 
 Assuming you want to run a dns seed on dnsseed.example.com, you will
 need an authorative NS record in example.com's domain record, pointing
-to for example vps.example.com:
+to for example ns.actinium.org:
 
-$ dig -t NS dnsseed.example.com
+`dig -t NS dnsseed.actinium.org`
 
+````shell
 ;; ANSWER SECTION
-dnsseed.example.com.   86400    IN      NS     vps.example.com.
+dnsseed.actinium.org.   86400    IN      NS     ns.actinium.org.
+```
 
-On the system vps.example.com, you can now run dnsseed:
+On the system ns.actinium.org, you can now run dnsseed:
 
-./dnsseed -h dnsseed.example.com -n vps.example.com
+`./dnsseed -h dnsseed.actinum.org -n ns.actinium.org`
 
 If you want the DNS server to report SOA records, please provide an
 e-mail address (with the @ part replaced by .) using -m.
 
-COMPILING
----------
+## Compiling
+
 Compiling will require boost and ssl.  On debian systems, these are provided
 by `libboost-dev` and `libssl-dev` respectively.
 
@@ -48,8 +51,7 @@ $ make
 This will produce the `dnsseed` binary.
 
 
-RUNNING AS NON-ROOT
--------------------
+## Running as non-root
 
 Typically, you'll need root privileges to listen to port 53 (name service).
 
